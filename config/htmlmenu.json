@@ -1,89 +1,28 @@
 {
-
-    "提醒": 
-    {
-        "autho": "all",
-        "enable": true,
-        "child":
-        {
-            "主要提醒":
-            {
-                "enable": true,
-                "autho": "all",
-                "href": "Notification"
-            }
-        }
-    },
-    "表單管理": 
-    {
-        "autho": "all",
-        "enable": true,
-        "child":
-        {
-            "買賣單":
-            {
-                "enable": true,
-                "autho": "all",
-                "href": "Transaction"
-            },
-            "保固單":
-            {
-                "enable": true,
-                "autho": "all",
-                "href": "Warranty"
-            },
-            "保養名冊":
-            {
-                "enable": true,
-                "autho": "all",
-                "href": "Service"
-            }
-        }
-    },
-    "派遣管理": 
-    {
-        "autho": "all",
-        "enable": true,
-        "child":
-        {
-            "派遣列表":
-            {
-                "enable": true,
-                "autho": "all",
-                "href": "DispatchList"
-            }
-        }
-    },
     "人員管理":
     {
-        "autho": "all",
+        "autho": "admin",
         "enable": true,
         "child":
         {
-            "客戶列表":
-            {
-                "enable": true,
-                "autho": "all",
-                "href": "Customer"
-            },
             "人員列表":
             {
                 "enable": true,
-                "autho": "all",
-                "href": "MemberList"
-            }      
+                "autho": "admin",
+                "href": "AuthList"
+            } 
         }
     },
     "報表系統":
     {
-        "autho": "all",
+        "autho": "admin",
         "enable": true,
         "child":
         {
             "操作歷史紀錄":
             {
                 "enable": true,
-                "autho": "all",
+                "autho": "admin",
                 "href": "HistoryRecordSearch"
             }
         }

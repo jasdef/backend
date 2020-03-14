@@ -8,10 +8,11 @@ var fs = require('fs');
 var https = require('https');
 
 common = require("./js/common");
-timer = require("./js/timer");
 
 var loginform = require('./js/login');
+var account = require('./js/account');
 var imgUpload = require('./js/uploadImg');
+
 var historyRecord = require('./js/historyRecordSearch');
 var listenPort = 8888;
 var key = fs.readFileSync('certificate/ca.key', 'utf8');
@@ -34,10 +35,12 @@ app.use(session({
     saveUninitialized: false,
     cookie: { maxAge: 60 * 1000 * 50 }
 }));
-
+app.use(account);
 app.use(imgUpload);
 app.use(loginform);
+
 app.use(historyRecord);
+
 app.get('/', function (req, res) {
     if (typeof (req.session['account']) === "undefined") {
         res.redirect('/LoginForm');
