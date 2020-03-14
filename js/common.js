@@ -16,7 +16,7 @@ function ConnectBackendDB() {
         port: '3306',
         user: 'root',
         password: '',
-        database: 'elevator',
+        database: 'backend',
         multipleStatements: true // 有坑，若要於單次connection執行一個以上的query就需要設為true
     };
     switch (process.env.environment) {
