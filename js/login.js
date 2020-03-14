@@ -53,11 +53,11 @@ router.post('/BackendLogin', function (req, res) {
                             req.session['account'] = req.body.Username;
                             req.session['autho'] = dbresults[0].autho;
                             req.session['authid'] = dbresults[0].id;
-                            if (dbresults[0].autho == "staff") {
+                            if (dbresults[0].autho == "staff") {//可以依據身分轉換首頁
                                 res.send({ code: '0', html: 'DispatchOwn', account: req.body.Username });
                             }
                             else {
-                                res.send({ code: '0', html: 'Notification', account: req.body.Username });
+                                res.send({ code: '0', html: 'AuthList', account: req.body.Username });
                             }
                             res.end();
                             common.BackendConnection(res, function (err, connection) {

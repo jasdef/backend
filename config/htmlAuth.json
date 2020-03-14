@@ -43,6 +43,12 @@
         "autho": "admin",
         "enable": true,
         "type": "protocol"
+    },        
+    "Account_Transfer":
+    {
+        "autho": "admin",
+        "enable": true,
+        "type": "protocol"
     },    
     "AuthAdd":
     {
