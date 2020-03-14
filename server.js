@@ -7,17 +7,10 @@ var app = express();
 var fs = require('fs');
 var https = require('https');
 
-
 common = require("./js/common");
 timer = require("./js/timer");
 
-
 var loginform = require('./js/login');
-var notification = require('./js/notification');
-var transaction = require('./js/transaction');
-var warranty = require('./js/warranty');
-var customer = require('./js/customer');
-var service = require('./js/service');
 var imgUpload = require('./js/uploadImg');
 var historyRecord = require('./js/historyRecordSearch');
 var listenPort = 8888;
@@ -41,13 +34,9 @@ app.use(session({
     saveUninitialized: false,
     cookie: { maxAge: 60 * 1000 * 50 }
 }));
-app.use(customer);
-app.use(service);
+
 app.use(imgUpload);
 app.use(loginform);
-app.use(notification);
-app.use(transaction);
-app.use(warranty);
 app.use(historyRecord);
 app.get('/', function (req, res) {
     if (typeof (req.session['account']) === "undefined") {
